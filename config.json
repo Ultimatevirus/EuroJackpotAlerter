@@ -1,0 +1,7 @@
+{
+    "URL": "https://www.eurojackpot.org/en/",
+    "port": 465,
+    "ServerEmail": "server@gmail.com",
+    "SendList": "recipient@mail.com",
+    "AuthSecret": "b64encodedstring'"
+}
