@@ -1,8 +1,5 @@
-        """\
-        Subject: EuroJackpot is 120 miljoen
+EuroJackpot is 120 miljoen
 
-        
-        L0TT0 ALERT
-        
-        EuroJackpot is op 120 miljoen, als je loten wilt is de tijd nu aangebroken
-        """
+
+L0TT0 ALERT
+EuroJackpot is op 120 miljoen, als je loten wilt is de tijd nu aangebroken
