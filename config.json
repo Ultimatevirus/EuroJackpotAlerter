@@ -1,7 +1,9 @@
 {
     "URL": "https://www.eurojackpot.org/en/",
     "port": 465,
+    "SMTP": "smtp.gmail.com",
     "ServerEmail": "server@gmail.com",
     "SendList": "recipient@mail.com",
-    "AuthSecret": "b64encodedstring'"
+    "AuthSecret": "b64encodedstring'",
+    "TaxFactor":0.695
 }
