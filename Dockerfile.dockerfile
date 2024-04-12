@@ -5,7 +5,7 @@ COPY mailbody.txt ./
 COPY script.py ./
 COPY trigger.py ./
 ENV PYTHONUNBUFFERED=1
-ENV SMTPAUTH="b64encodedstring"
+ENV SMTPAUTH="EncryptedPassword"
 RUN apk add --no-cache python3 py3-pip
 RUN pip3 install --no-cache --upgrade pip setuptools --break-system-packages
 RUN pip install --no-cache bs4 requests schedule --break-system-packages
