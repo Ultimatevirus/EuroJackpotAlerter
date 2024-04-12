@@ -1,10 +1,15 @@
 """ Simple script to send an alert if eurojackpot has reached it's max jackpot """
+
+__author___ = "Alex Brittmann"
+__status__= "WiP"
+
 import sys
 import smtplib
 import ssl
-import base64
 import json
+import os
 import requests
+from cryptography.fernet import Fernet
 from bs4 import BeautifulSoup
 
 with open("config.json", 'r', encoding="utf8") as f:
@@ -26,6 +31,10 @@ def netamountline(jackpot_amount):
     net_amount_line = " After taxes, you'd win: " + net + " million euros"
     return net_amount_line
 
+def crypto():
+    "Decrypts enviromental variable with config key"
+    result = Fernet(config["key"]).decrypt(os.environ.get('SMTPAUTH'))
+    return result.decode("utf-8")
 
 def sendalert(jackpot_amount):
     """Function sends email through gmail SMTP with settings from config, with body.txt """
@@ -35,7 +44,7 @@ def sendalert(jackpot_amount):
     context = ssl.create_default_context()
     serveremail = config["ServerEmail"]
     with smtplib.SMTP_SSL(config["SMTP"], config["port"], context=context) as server:
-        server.login(serveremail,base64.b64decode(config["AuthSecret"]).decode("utf-8"))
+        server.login(serveremail,crypto())
         server.sendmail(serveremail,config["SendList"],body + netamountline(jackpot_amount))
 
 
@@ -46,6 +55,5 @@ def main():
         sendalert(jackpot_amount)
     else:
         sys.exit(0)
-
 
 main()

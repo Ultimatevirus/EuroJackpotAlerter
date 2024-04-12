@@ -4,6 +4,7 @@
     "SMTP": "smtp.gmail.com",
     "ServerEmail": "server@gmail.com",
     "SendList": "recipient@mail.com",
-    "AuthSecret": "b64encodedstring'",
-    "TaxFactor":0.695
+    "key": "Fernetkey",
+    "TaxFactor":0.695,
+    "ScheduleTime": "01:00"
 }
